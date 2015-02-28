@@ -7,7 +7,7 @@ This is the working version.
 ```rbcon
 # Developed and tested on:
 Ruby 2.1.0
-Rails ~> 4.0.0
+Rails ~> 4.0
 ```
 [![Gem Version](https://badge.fury.io/rb/awesomplete.svg)](http://badge.fury.io/rb/awesomplete)
 
