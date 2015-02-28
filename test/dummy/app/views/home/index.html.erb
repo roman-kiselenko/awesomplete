@@ -1,0 +1,47 @@
+<h2> Source data-list </h2>
+
+<input class="awesomplete" data-list="<%= @languages_string %>" />
+
+<br/>
+
+<h2> Source Rails helper <code>text_field</code> </h2>
+
+<%= text_field "option", nil, class: 'awesomplete', data: { list: '#mylist', autoFirst: true } %>
+
+<ul id="mylist">
+
+   <% @languages_array.each do |l| %>
+
+     <li><%= l %></li>
+
+   <% end %>
+
+ </ul>
+
+<h2> Source Rails helper <code>text_field</code> v2 </h2>
+
+<%= text_field "option", nil, class: 'awesomplete', list: 'datalist' %>
+
+<datalist id="datalist">
+
+   <% @languages_array.each do |l| %>
+
+   <option><%= l %></option>
+
+   <% end %>
+
+ </datalist>
+
+<h2> Source Rails helper <code>text_field</code> v3 customize </h2>
+
+<%= text_field "option", nil, class: 'awesomplete', data: { list: '#datalistv3', autoFirst: true, minChars: 4 } %>
+
+<datalist id="datalistv3">
+
+   <% @languages_array.each do |l| %>
+
+   <option><%= l %></option>
+
+   <% end %>
+
+ </datalist>
