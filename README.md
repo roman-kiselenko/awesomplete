@@ -41,30 +41,30 @@ in controller:
 
 ```erb
 def index
-  @collection = ['One', 'Two', 'Three', 'Four'].join(',')
+  @input_one = ['five', 'six', 'seven']
+  @input_two = ['one', 'two', 'three']
 end
 ```
 
-in views:
+with [`form_for`](http://apidock.com/rails/ActionView/Helpers/FormHelper/form_for):
 
 ```erb
-<%= text_field_tag :something, nil, class: 'awesomplete', data: { list: @collection } %>
+<%= form_for(:post, url: posts_path) do |f| %>
+  <%= f.awesomplete_field(:name, collection: @input_one) %>
 ```
 
-## Configure module
-You can configurate this autocomplete by two ways:
+with [`simple_form`](https://github.com/plataformatec/simple_form) :smile: :
 
-1. In `data-` options in views:
+```erb
+<%= simple_form_for(:post, url: posts_path) do |i| %>
+  <%= i.awesomplete_field(:title, collection: @input_two) %>
+```
 
-  ```erb
-  #TODO
-  ```
+## Configure
+You can configurate this autocomplete:
 
-2. In `javascripts` initializer (e.g. `app/assets/javascripts/some_script.js`):
+#TODO
 
-  ```javascript
-  #TODO
-  ```
 * * *
 
 
@@ -72,7 +72,7 @@ You can configurate this autocomplete by two ways:
 
 1. Write update version task.
 
-2. Write full helper method like `link_to` or `assets_path` something like `awesomplete`.
+2. More options
 
 Kiselenko Roman 
 
