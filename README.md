@@ -60,6 +60,12 @@ with [`simple_form`](https://github.com/plataformatec/simple_form) :smile: :
   <%= i.awesomplete_field(:title, collection: @input_two) %>
 ```
 
+or just in view:
+
+```erb
+  <%= awesomplete_field(:name, collection: @input_one) %>
+```
+
 ## Configure
 You can configurate this autocomplete:
 
