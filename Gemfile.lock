@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    awesomplete (0.0.3)
+    awesomplete (0.0.6)
       rails (~> 4.0)
 
 GEM

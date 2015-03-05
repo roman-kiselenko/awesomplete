@@ -37,33 +37,21 @@ Now you can write inputs with awesomplete autocomplete!
 
 Check it out.
 
-in controller:
+This example used [slim](http://slim-lang.com/) templating engine. 
 
-```erb
-def index
-  @input_one = ['five', 'six', 'seven']
-  @input_two = ['one', 'two', 'three']
-end
-```
+```ruby
+.ui.fluid.form
+  .two.fields
+    = form_for(:post, url: posts_path) do |f|
+      = f.awesomplete_field(:name, collection: ['five', 'six', 'seven'])
+      = submit_tag "Add Post"
 
-with [`form_for`](http://apidock.com/rails/ActionView/Helpers/FormHelper/form_for):
-
-```erb
-<%= form_for(:post, url: posts_path) do |f| %>
-  <%= f.awesomplete_field(:name, collection: @input_one) %>
-```
-
-with [`simple_form`](https://github.com/plataformatec/simple_form) :smile: :
-
-```erb
-<%= simple_form_for(:post, url: posts_path) do |i| %>
-  <%= i.awesomplete_field(:title, collection: @input_two) %>
-```
-
-or just in view:
-
-```erb
-  <%= awesomplete_field(:name, collection: @input_one) %>
+    = awesomplete_field(:other, collection: ['red', 'green', 'blue'])
+    
+    = simple_form_for(:post, url: posts_path, remote: true, method: :post) do |i|
+      .field
+        = i.awesomplete_field(:title, collection: ['one', 'two', 'three'])
+      .field
 ```
 
 ## Configure
